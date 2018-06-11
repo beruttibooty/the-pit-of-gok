@@ -21,7 +21,7 @@ fighters = {
     'shia labeouf':(70, 1.76, 85, 77, 80, 80, 80, 78, ['bamboozle','idiot'],'megamind'),
     'stanley yelnats':(60, 1.56, 95, 90, 85, 90, 85, 79, ['megamind'],'fire'),
     'martin luther king junior':(),
-    'pupienus':(85, 1.8, 80, 80, 100, 65, 100, 86, ['fist'], 'water'),
+    'pupienus':(85, 1.8, 80, 80, 100, 65, 100, 86, ['fist'], 'technology'),
     'shitulus maximus':(random.randrange(1,100),random.randrange(100,200)/100,random.randrange(1,100),random.randrange(1,100),random.randrange(1,100),random.randrange(1,100),random.randrange(1,100),random.randrange(1,100),random.randrange(70,110),'bamboozle','bamboozle'),
     'michelin man':(90, 2.2, 60, 65, 85, 75, 40, 120, ['mobility','range'],'fire'),
     'sonic':(60, 1.2, 150, 150, 100, 40, 80, 70, ['mobility','idiot','flying','animal'],'megamind'),
@@ -141,9 +141,10 @@ fighters = {
     'larry the cable guy':(),
     'larry david':(),
     'gary the snail':(),
-    'max the big idiot':(1,3,10,10,100,-5,0,50, ['big','idiot'],'bamboozle'),
+    'max the big idiot':(1,3,10,10,100,5,0,50, ['big','idiot'],'bamboozle'),
     'bill cosby':(),
-    'brube':(['water'])
+    'brube':(['water']),
+    'pisa will smith':(),
     }
 prefix = {
     'deca': 10,
@@ -356,6 +357,7 @@ def auto():
     while True:
         inp = input()
         if inp == 'esc': break
+        if inp == 'tourney': tourney()
         if inp[0:9] == 'how many ': hm(inp[9:])
         else: fm(inp)
 
@@ -366,11 +368,11 @@ def tourney():
     prefixes = ('xl ','deci ','lil ','large ','big ')
     for i in range(10):
         ld1 = 0
-        while ld1 != 8:
+        while ld1 != 10:
             d1 = random.choice(options)
             ld1 = len(list(fighters[d1]))
         ld2 = 0
-        while ld2 != 8:
+        while ld2 != 10:
             d2 = random.choice(options)
             ld2 = len(list(fighters[d2]))
         n1 = random.randrange(1,4)
